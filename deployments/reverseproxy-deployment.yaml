@@ -5,7 +5,7 @@ metadata:
     service: reverseproxy
   name: reverseproxy
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       service: reverseproxy
@@ -14,16 +14,17 @@ spec:
       labels:
         service: reverseproxy
     spec:
-      serviceAccountName: default-sa
       containers:
-        - image: huy56xf/udagram-reverseproxy:v1
-          name: reverseproxy
-          resources:
-            requests:
-              memory: "64Mi"
-              cpu: "250m"
-            limits:
-              memory: "1024Mi"
-              cpu: "500m"
-          ports:
-            - containerPort: 8001
+      - image: huy56xf/udagram-reverseproxy:v1
+        name: reverseproxy
+        imagePullPolicy: Always          
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "2048Mi"
+            cpu: "500m"       
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always

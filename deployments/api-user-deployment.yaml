@@ -14,7 +14,6 @@ spec:
       labels:
         service: backend-user
     spec:
-      serviceAccountName: default-sa
       containers:
         - image: huy56xf/udagram-api-user:v1
           ports:

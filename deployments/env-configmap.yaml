@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: ConfigMap
 data:
-  AWS_BUCKET: huy-234595025869-bucket
+  AWS_BUCKET: test-992654605303-dev
   AWS_PROFILE: default
   AWS_REGION: us-east-1
   JWT_SECRET: hello
-  POSTGRES_DB: udagram
-  POSTGRES_HOST: cdr.crisxuau0mtt.us-east-1.rds.amazonaws.com
+  POSTGRES_DB: huy
+  POSTGRES_HOST: huy.cdteves2zrkf.us-east-1.rds.amazonaws.com
   URL: http://localhost:8100
 metadata:
   name: env-config
